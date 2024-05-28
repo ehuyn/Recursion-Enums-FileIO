@@ -7,10 +7,10 @@ public class Main {
         Scanner in = new Scanner(System.in);
         SeriesCategory theSeries = null;
         boolean flag;
-        String other = "";
         String series = "";
         double startVal = 0.0;
-        double var;
+        // var represents the variable that is dependent on the series category
+        double var = 0;
         double sum = 0;
         int numTerms = 0;
         int play;
@@ -42,33 +42,29 @@ public class Main {
                     var = getValidDoubleInput("Common Difference: ");
                     // Calculate sum of the given terms in this series
                     sum = Recursion.arithmeticSum(startVal, var, numTerms, 1, 0.0);
-                    other = "" + var;
                     break;
                 case GEOMETRIC:
                     // Get common ratio
                     var = getValidDoubleInput("Common Ratio: ");
                     // Calculate sum of the given terms in this series
                     sum = Recursion.geometricSum(startVal, var, numTerms, 1, 0.0);
-                    other = "" + var;
                     break;
                 case FIBONACCI:
                     // Get second term
                     var = getValidDoubleInput("Second Term: ");
                     // Calculate sum of the given terms in this series
                     sum = Recursion.fibonacciSum(startVal, var, numTerms, 1, 0.0);
-                    other = "" + var;
                     break;
                 case HARMONIC:
                     // Get change in interval
                     var = getValidDoubleInput("Change in Interval: ");
                     // Calculate sum of the given terms in this series
                     sum = Recursion.harmonicSum(startVal, var, numTerms, 1, 0.0);
-                    other = "" + var;
                     break;
             }
 
             System.out.println("The sum of the given terms in this series is " + sum + ".");
-            Save.saveSum(series, startVal, numTerms, sum, other);
+            Save.saveSum(series, startVal, numTerms, sum, ""+ var);
             System.out.println();
             play = getValidIntInput("Would you like to run the program again (0 for no, 1 for yes)? ", 0, 1);
             System.out.println();
