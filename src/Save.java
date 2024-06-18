@@ -7,9 +7,10 @@ public class Save{
         try{
             FileWriter fileWrite = new FileWriter("sums.txt", true);
             BufferedWriter buffWrite = new BufferedWriter(fileWrite);
+            String otherVariable = determineVariable(series);
             // Writes sums to sums.txt file in the format below
             // Format: series category, starting value, number of terms, other variable (dependent on the given series), resulting sum
-            buffWrite.write(series + ", " + start + ", " + numTerms + ", " + other + ", " + sum);
+            buffWrite.write("Series Category: " + series + "\nStarting value: " + start + "\nNumber of terms: " + numTerms + "\n" + otherVariable + other + "\nSum: " + sum + "\n");
             buffWrite.newLine();
             buffWrite.close();
         }
@@ -18,6 +19,21 @@ public class Save{
         }
         catch (IOException ex){
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private static String determineVariable(String series){
+        switch(series){
+            case "ARITHMETIC":
+                return "Common difference: ";
+            case "GEOMETRIC":
+                return "Common ratio: ";
+            case "FIBONACCI":
+                return "Second term value: ";
+            case "HARMONIC":
+                return "Change in interval: ";
+            default:
+                return null;
         }
     }
 }
