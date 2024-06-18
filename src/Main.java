@@ -64,7 +64,7 @@ public class Main {
             }
 
             System.out.println("The sum of the given terms in this series is " + sum + ".");
-            Save.saveSum(series, startVal, numTerms, sum, ""+ var);
+            new Save(series, startVal, numTerms, sum, ""+ var);
             System.out.println();
             play = getValidIntInput("Would you like to run the program again (0 for no, 1 for yes)? ", 0, 1);
             System.out.println();

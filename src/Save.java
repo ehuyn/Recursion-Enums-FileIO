@@ -3,7 +3,22 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 public class Save{
-    public static void saveSum(String series, double start, int numTerms, double sum, String other){
+    private String series;
+    private double start;
+    private int numTerms;
+    private double sum;
+    private String other;
+
+    public Save(String series, double start, int numTerms, double sum, String other){
+        this.series = series;
+        this.start = start;
+        this.numTerms = numTerms;
+        this.sum = sum;
+        this.other = other;
+        saveSum();
+    }
+
+    private void saveSum(){
         try{
             FileWriter fileWrite = new FileWriter("sums.txt", true);
             BufferedWriter buffWrite = new BufferedWriter(fileWrite);
@@ -22,7 +37,7 @@ public class Save{
         }
     }
 
-    private static String determineVariable(String series){
+    private String determineVariable(String series){
         switch(series){
             case "ARITHMETIC":
                 return "Common difference: ";
