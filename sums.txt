@@ -1,0 +1,24 @@
+Series Category: ARITHMETIC
+Starting value: 5.0
+Number of terms: 10
+Common difference: 5.0
+Sum: 275.0
+
+Series Category: GEOMETRIC
+Starting value: 1.0
+Number of terms: 10
+Common ratio: 2.0
+Sum: 1023.0
+
+Series Category: FIBONACCI
+Starting value: 0.0
+Number of terms: 10
+Second term value: 1.0
+Sum: 88.0
+
+Series Category: HARMONIC
+Starting value: 1.0
+Number of terms: 10
+Change in interval: 2.0
+Sum: 2.1332555301595546
+
